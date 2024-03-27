@@ -10,41 +10,117 @@
     font-family: system-ui, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+    
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
+}
+
+.header {
+    grid-column: 2;
+    border: 1px solid blue;
+    padding: 16px 48px;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    gap: 15px;
+}
+
+.header .top-bar {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.top-bar ul {
+    display: grid;
+    grid-template-columns: 50px 50px 1fr;
+    gap: 10px;
+    justify-items: center;
+    list-style-type: none;
+}
+
+.top-bar ul:last-child {
+    justify-self: left;
+}
+
+input {
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+input[type="search"] {
+    border-radius: 16px;
+    background: #dde;
+    width: 800px;
+    padding: 5px 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.header .bottom-bar {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    align-items: center;
 }
 
 .sidebar {
     grid-column: 1;
     grid-row: 1/3;
     border: 1px solid blue;
-    padding: 10px;
+    padding: 0px 50px;
 
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-rows: 100px 300px 100px;
 }
 
-.header {
-    grid-column: 2;
-    border: 1px solid blue;
+.sidebar .logo {
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+}
+
+.sidebar li {
+    list-style: none;
+    font-size: 1.3rem;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar img {
+    width: 24px;
+    height: 24px;
 }
 
 .content {
     grid-column: 2;
     grid-row: 2;
     border: 1px solid blue;
-    padding: 15px;
+    padding: 30px;
 
     display: grid;
     grid-template-columns: 2fr, 1fr;
-    gap: 15px;
+    gap: 50px;
 }
 
-.content .projects {
+.content .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.content .card {
+    border: 2px solid red;
+    border-radius: 4px;
+    padding: 5px;
+    height: 200px;
 }
 
 .news {
@@ -53,12 +129,5 @@
 }
 
 .news > div {
-    width: 300px;
-}
-
-.content .card {
-    border: 2px solid red;
-    border-radius: 4px;
-    padding: 5px;
-    height: 200px;
+    width: 400px;
 }
