@@ -13,7 +13,11 @@
 :root {
     --deep-purple: #38166b;
     --light-purple: #512d81;
+    --sidebar-purple: #71478d;
     --search-purple: #ecd6f3;
+    --color-flip: invert(100%) sepia(7%) saturate(0%) hue-rotate(85deg) brightness(107%) contrast(109%);
+    --like-color: invert(50%) sepia(90%) saturate(1284%) hue-rotate(302deg) brightness(101%) contrast(101%);
+    --animation-color: invert(69%) sepia(76%) saturate(5154%) hue-rotate(88deg) brightness(121%) contrast(127%);
 }
 
 .container {
@@ -23,7 +27,6 @@
 
 .header {
     grid-column: 2;
-    border: 1px solid blue;
     padding: 16px 48px;
     display: grid;
     grid-template-rows: 1fr 2fr;
@@ -126,11 +129,15 @@ button:active {
 .sidebar {
     grid-column: 1;
     grid-row: 1/3;
-    border: 1px solid blue;
     padding: 0px 50px;
 
     display: grid;
     grid-template-rows: 100px 300px 100px;
+    background-color: var(--sidebar-purple);
+}
+
+.sidebar > * {
+    filter: var(--color-flip);
 }
 
 .sidebar .logo {
@@ -138,6 +145,14 @@ button:active {
     display: grid;
     grid-template-columns: 40px 1fr;
     align-items: center;
+}
+
+.sidebar .logo img {
+    height: 36px;
+    width: 36px;
+    align-self: center;
+    padding-top: 6px;
+    margin-left: -7px;
 }
 
 .sidebar li {
@@ -157,7 +172,6 @@ button:active {
 .content {
     grid-column: 2;
     grid-row: 2;
-    border: 1px solid blue;
     padding: 30px;
 
     display: grid;
@@ -168,22 +182,81 @@ button:active {
 
 .content .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
 .content .card {
-    border: 2px solid red;
-    border-radius: 4px;
-    padding: 5px;
-    height: 200px;
+    border-radius: 0.75rem;
+    padding: 0.875rem;
+    height: 220.5px;
     background-color: white;
+    display: grid;
+}
+
+.content .card .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-interactions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    justify-items: end;
+    grid-auto-flow: column;
+    align-items: end;
+}
+
+.like:hover,
+.watch:hover,
+.share:hover {
+    cursor: pointer;
+}
+
+.like {
+    filter: var(--like-color)
+}
+
+.like.clicked {
+    animation-name: liked;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes liked {
+    0% {
+        filter: var(--like-color)}
+    35% {
+        rotate: 0deg;
+    }
+    45% {
+        rotate: 15deg;
+    }
+    50% {
+        filter: var(--animation-color);
+        transform: scale(1.25);
+    }
+    55% {
+        rotate: -15deg}
+    65% {
+        rotate: 0deg;
+    }
+    100% {
+        filter: var(--like-color)
+    }
+}
+
+.content .card img {
+    width: 30px;
+    height: 30px;
 }
 
 .news {
     grid-column: 2;
     display: grid;
+    grid-template-rows: 300px 300px;
 }
 
 .news > div {
