@@ -11,7 +11,9 @@
 }
 
 :root {
-    
+    --deep-purple: #38166b;
+    --light-purple: #512d81;
+    --search-purple: #ecd6f3;
 }
 
 .container {
@@ -30,7 +32,19 @@
 
 .header .top-bar {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+    grid-auto-flow: column;
+}
+
+.top-bar p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.header .top-bar img {
+    height: 30px;
+    width: 30px;
 }
 
 .top-bar ul {
@@ -53,18 +67,60 @@ input {
 
 input[type="search"] {
     border-radius: 16px;
-    background: #dde;
-    width: 800px;
+    background: var(--search-purple);
+    width: 70%;
     padding: 5px 15px;
     font-size: 0.95rem;
     font-weight: 600;
+    vertical-align: top;
 }
 
 .header .bottom-bar {
     grid-row: 2;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     align-items: center;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.header .bottom-bar div {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 20px 1fr;
+    align-items: start;
+}
+
+#username {
+    grid-column: 2;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.header .bottom-bar img {
+    height: 60px;
+    width: 60px;
+}
+
+button {
+    border: none;
+    border-radius: 2rem;
+    padding: 16px 48px;
+    cursor: pointer;
+    color: #ddd;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--deep-purple);
+    transition: 0.1s;
+}
+
+button:hover {
+    background-color: var(--light-purple);
+}
+
+button:active {
+    background-color: var(--deep-purple);
+    transform: scale(0.95);
 }
 
 .sidebar {
@@ -107,6 +163,7 @@ input[type="search"] {
     display: grid;
     grid-template-columns: 2fr, 1fr;
     gap: 50px;
+    background-color: var(--search-purple);
 }
 
 .content .cards {
@@ -121,6 +178,7 @@ input[type="search"] {
     border-radius: 4px;
     padding: 5px;
     height: 200px;
+    background-color: white;
 }
 
 .news {
