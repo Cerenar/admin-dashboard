@@ -17,7 +17,11 @@
     --search-purple: #ecd6f3;
     --color-flip: invert(100%) sepia(7%) saturate(0%) hue-rotate(85deg) brightness(107%) contrast(109%);
     --like-color: invert(50%) sepia(90%) saturate(1284%) hue-rotate(302deg) brightness(101%) contrast(101%);
-    --animation-color: invert(69%) sepia(76%) saturate(5154%) hue-rotate(88deg) brightness(121%) contrast(127%);
+    --like-animation: invert(69%) sepia(76%) saturate(5154%) hue-rotate(88deg) brightness(121%) contrast(127%);
+    --watch-color: invert(29%) sepia(96%) saturate(1411%) hue-rotate(210deg) brightness(104%) contrast(109%);
+    --watch-animation: invert(12%) sepia(93%) saturate(7483%) hue-rotate(2deg) brightness(113%) contrast(112%);
+    --share-color: invert(60%) sepia(100%) saturate(744%) hue-rotate(17deg) brightness(98%) contrast(101%);
+    --share-animation: invert(14%) sepia(96%) saturate(3906%) hue-rotate(285deg) brightness(78%) contrast(102%);
 }
 
 .container {
@@ -219,12 +223,6 @@ button:active {
     filter: var(--like-color)
 }
 
-.like.clicked {
-    animation-name: liked;
-    animation-duration: 1000ms;
-    animation-timing-function: ease-in-out;
-}
-
 @keyframes liked {
     0% {
         filter: var(--like-color)}
@@ -235,17 +233,92 @@ button:active {
         rotate: 15deg;
     }
     50% {
-        filter: var(--animation-color);
+        filter: var(--like-animation);
         transform: scale(1.25);
     }
     55% {
-        rotate: -15deg}
+        rotate: -15deg
+    }
     65% {
         rotate: 0deg;
     }
     100% {
         filter: var(--like-color)
     }
+}
+
+.like.clicked {
+    animation-name: liked;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+}
+
+.watch {
+    filter: var(--watch-color);
+}
+
+@keyframes watched {
+    0% {
+        filter: var(--watch-color)}
+    35% {
+        rotate: 0deg;
+    }
+    45% {
+        rotate: 15deg;
+    }
+    50% {
+        filter: var(--watch-animation);
+        transform: scale(1.25);
+    }
+    55% {
+        rotate: -15deg
+    }
+    65% {
+        rotate: 0deg;
+    }
+    100% {
+        filter: var(--watch-color);
+    }
+}
+
+.watch.clicked {
+    animation-name: watched;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+}
+
+.share {
+    filter: var(--share-color);
+}
+
+@keyframes shared {
+    0% {
+        filter: var(--share-color)}
+    35% {
+        rotate: 0deg;
+    }
+    45% {
+        rotate: 15deg;
+    }
+    50% {
+        filter: var(--share-animation);
+        transform: scale(1.25);
+    }
+    55% {
+        rotate: -15deg
+    }
+    65% {
+        rotate: 0deg;
+    }
+    100% {
+        filter: var(--share-color);
+    }
+}
+
+.share.clicked {
+    animation-name: shared;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
 }
 
 .content .card img {

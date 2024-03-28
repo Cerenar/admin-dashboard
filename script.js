@@ -11,16 +11,20 @@ likes.forEach(like => {like.addEventListener('animationend', () => {
     });
 });
 
-// watches.addEventListener('click', function() {
-//   watch.classList.add('clicked');
-// });
-// watch.addEventListener('animationend', function() {
-//   watch.classList.remove('clicked');
-// });
+watches.forEach(watch => {watch.addEventListener('click', () => {
+    watch.classList.add('clicked');
+    });
+});
+watches.forEach(watch => {watch.addEventListener('animationend', () => {
+    watch.classList.remove('clicked');
+    });
+});
 
-// shares.addEventListener('click', function() {
-//   share.classList.add('clicked');
-// });
-// share.addEventListener('animationend', function() {
-//   share.classList.remove('clicked');
-// });
+shares.forEach(share => {share.addEventListener('click', () => {
+    share.classList.add('clicked');
+    });
+});
+shares.forEach(share => {share.addEventListener('animationend', () => {
+    share.classList.remove('clicked');
+    });
+});
