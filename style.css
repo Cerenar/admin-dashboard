@@ -80,6 +80,11 @@ input[type="search"] {
     font-size: 0.95rem;
     font-weight: 600;
     vertical-align: top;
+    border: 1px solid #00000022;
+}
+
+input[type="search"]:focus {
+    border: 2px solid #8c00ff66;
 }
 
 .header .bottom-bar {
@@ -328,10 +333,38 @@ button:active {
 
 .news {
     grid-column: 2;
-    display: grid;
-    grid-template-rows: 300px 300px;
+}
+
+.news > h2 {
+    margin-bottom: 20px;
 }
 
 .news > div {
-    width: 400px;
+    /* width: 400px; */
+    display: grid;
 }
+
+.announcements {
+    margin-bottom: 50px;
+}
+
+.a-container {
+    background-color: #fff;
+    padding: 2rem;
+    display: grid;
+    border-radius: 0.75rem;
+}
+
+.announcement {
+    border-bottom: 1px solid gray;
+}
+
+.announcement:last-child {
+    border: none;
+}
+
+.t-container {
+    /* height: 300px; */
+    display: grid;
+}
+
