@@ -67,6 +67,10 @@
     justify-self: left;
 }
 
+.top-bar li:hover {
+    cursor: pointer;
+}
+
 input {
     appearance: none;
     outline: none;
@@ -146,10 +150,6 @@ button:active {
     background-color: var(--sidebar-purple);
 }
 
-.sidebar > * {
-    
-}
-
 .sidebar .logo {
     font-size: 1.5rem;
     display: grid;
@@ -175,6 +175,7 @@ button:active {
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
+    transition: 0.1s;
     filter: var(--color-flip);
 }
 
