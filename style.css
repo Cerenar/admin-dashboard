@@ -212,6 +212,12 @@ button:active {
     height: 250px;
     background-color: white;
     display: grid;
+    transition: 0.1s;
+    border-left: var(--sidebar-purple) ridge 1.125rem;
+}
+
+.content .card:hover {
+    transform: scale(1.03);
 }
 
 .content .card .title {
